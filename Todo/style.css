@@ -1,0 +1,100 @@
+*{
+    padding: 0%;
+    margin:0%;
+    box-sizing: border-box;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    padding-bottom: 2%;
+}
+
+.Heading {
+    border: 1px solid black;
+    padding: 1%;
+    margin-bottom: 5%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+.addTodo {
+    display: flex;
+    align-items: center; /* Vertically aligns the items */
+    justify-content: center; /* Centers the items horizontally */
+    gap: 1rem; /* Adds spacing between the input and button */
+    margin-bottom: 1rem;
+}
+
+#item {
+    width: 50%;
+    background-color: aliceblue;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 10%;
+    font-size: 1rem;
+    height: 3rem; /* Set a fixed height */
+    box-sizing: border-box; /* Ensures padding doesn't increase height */
+}
+
+#button {
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 3rem; /* Matches the height of the input */
+    display: flex;
+    align-items: center; /* Ensures the text inside is vertically centered */
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#button:hover {
+    background-color: lightgray;
+}
+
+.items {
+    width: 80%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    gap: 1rem; /* Adds spacing between items */
+    border-radius: 10px;
+}
+
+.todo-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.75rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+    margin-left: auto;
+    background-color: brown;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
