@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Practice JS Machine Coding</h1>
+    <button id="Start">Start</button>
+    <button id="Stop">Stop</button>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const start = document.getElementById('Start');
+        const stop = document.getElementById('Stop');
+        function colorChanger() {
+            let hex = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)];
+            }
+            document.body.style.backgroundColor = color;
+            console.log(color);
+        }
+        let interval
+        const startChanging = function () {
+            if (!interval)
+                interval = setInterval(colorChanger, 1000);
+        }
+
+        const stopChanging = function () {
+            clearInterval(interval);
+            interval = null;
+        }
+        start.addEventListener('click', startChanging);
+        stop.addEventListener('click', stopChanging);
+
+
+    })
+</script>
+
+</html>
