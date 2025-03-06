@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click to Show Red Dot</title>
+    <style>
+        .red-dot {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            pointer-events: none; /* Ensure the dot doesn't interfere with clicking */
+        }
+    </style>
+</head>
+<body id="main">
+
+<script>
+    // Wait for the DOM to be fully loaded before adding event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        const bod = document.getElementById("main");
+
+        bod.addEventListener('click', function(e) {
+            // Create a new red dot element
+            console.log('DOM fully loaded');
+            const dot = document.createElement('div');
+            dot.classList.add('red-dot');
+            
+            // Adjust position to include page scroll offsets
+            dot.style.left = `${e.clientX + window.scrollX - 5}px`;  // Adjusted for scrolling and centering
+            dot.style.top = `${e.clientY + window.scrollY - 5}px`;   // Adjusted for scrolling and centering
+            
+            // Append the dot to the body
+            document.body.appendChild(dot);
+            
+            // Optional: Remove the dot after 1 second
+            setTimeout(() => {
+                dot.remove();
+            }, 1000);
+        });
+    });
+</script>
+
+</body>
+</html>

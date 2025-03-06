@@ -25,20 +25,20 @@
     </style>
 </head>
 <body>
-    <!-- <div id="first">
+    <div id="first">
         <div>
-            <div id="third">
+            <div id="third" style="padding:10px; background-color:red;">
                 <div id="last">
                      Hello world
                 </div>
             </div>
         </div>
-    </div> -->
-    <div class="main">
-
     </div>
+    <!-- <div class="main">
+
+    </div> -->
 </body>
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded',()=>{
      document.addEventListener('click',function(e){
         console.log(e);
@@ -55,18 +55,18 @@
         body.appendChild(div);
      })
   });
-</script>
-<!-- <script>
+</script> -->
+<script>
     document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('first').addEventListener('click', (e) => {
             console.log("First Div Clicked!");
             alert('clicked first');
-        },true);
+        });
         
         document.getElementById('third').addEventListener('click', (e) => {
             console.log("Last Div Clicked!");
             alert('clicked third');
-        },true);
+        });
         
         document.getElementById('last').addEventListener('click', (e) => {
             console.log("Last Div Clicked!");
@@ -74,5 +74,5 @@
         });
         
     });
-</script> -->
+</script>
 </html>
