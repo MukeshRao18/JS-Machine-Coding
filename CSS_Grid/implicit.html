@@ -70,11 +70,13 @@
   <title>Grid with Implicit Sizes</title>
   <style>
     .container {
+      /* width:200px; */
       display: grid;
-      grid-template-columns: repeat(1, 100px); /* 3 columns of 100px each */
+      grid-template-columns: repeat(1, 100px); /* 1 columns of 100px each */
       gap: 20px; /* 20px gap between grid items */
       border: 2px solid #333;
       /* grid-auto-columns: 100px; */
+      grid-auto-rows: 100px;
     }
 
     .item {
@@ -88,7 +90,7 @@
 
     .item2x2 {
       grid-column: span 2;
-      grid-row: span 2;
+      grid-row:span 2;
       background-color: crimson;
     }
 
