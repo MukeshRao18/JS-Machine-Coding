@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Example: auto-fill vs auto-fit</title>
+  <style>
+    /* Container Styles */
+    .container {
+        background-color: #0099cc;
+      display: grid;
+      gap: 10px;
+      padding: 10px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Change auto-fill to auto-fit to see difference */
+    }
+
+    /* Grid Item Styles */
+    .item {
+      background-color: lightblue;
+      border: 2px solid #0099cc;
+      padding: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+
+    /* Adding colors to each item */
+    .item:nth-child(1) {
+      background-color: lightcoral;
+    }
+
+    .item:nth-child(2) {
+      background-color: lightgreen;
+    }
+
+    .item:nth-child(3) {
+      background-color: lightgoldenrodyellow;
+    }
+
+    .item:nth-child(4) {
+      background-color: lightpink;
+    }
+
+    .item:nth-child(5) {
+      background-color: lightseagreen;
+    }
+
+    .item:nth-child(6) {
+      background-color: lightsalmon;
+    }
+
+    .item:nth-child(7) {
+      background-color: lightyellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Grid with repeat(auto-fill) and minmax(150px, 1fr)</h2>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 7</div>
+  </div>
+
+  <h2>Grid with repeat(auto-fit) and minmax(150px, 1fr)</h2>
+  <div class="container" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 7</div>
+  </div>
+
+</body>
+</html>

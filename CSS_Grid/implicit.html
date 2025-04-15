@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grid with Item Spans</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 100px); /* 4 columns of 100px each */
+      grid-auto-rows: 80px; /* Each row is 80px tall */
+      gap: 20px; /* 20px gap between grid items */
+      grid-auto-flow: column dense;
+      border: 2px solid #333;
+      background-color: lightgray; /* Color for the gaps */
+      padding: 20px;
+    }
+
+    .item {
+      background-color: lightseagreen;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    /* Custom sizes */
+    .item2x2 {
+      grid-column: span 2;
+      grid-row: span 2;
+      background-color: crimson;
+    }
+
+    .item2x1 {
+      grid-column: span 2;
+      background-color: orange;
+    }
+
+    .item1x2 {
+      grid-row: span 2;
+      background-color: royalblue;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>🌈 Grid with Items of Varying Sizes</h2>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item item2x2">2x2</div>
+    <div class="item">3</div>
+    <div class="item item2x1">2x1</div>
+    <div class="item">5</div>
+    <div class="item item1x2">1x2</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+  </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grid with Implicit Sizes</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(1, 100px); /* 3 columns of 100px each */
+      gap: 20px; /* 20px gap between grid items */
+      border: 2px solid #333;
+      /* grid-auto-columns: 100px; */
+    }
+
+    .item {
+      background-color: lightseagreen;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .item2x2 {
+      grid-column: span 2;
+      grid-row: span 2;
+      background-color: crimson;
+    }
+
+  </style>
+</head>
+<body>
+  <h2>🌈 Grid with Implicit Row and Column Sizes</h2>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item item2x2">2x2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+  </div>
+</body>
+</html>
