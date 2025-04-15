@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagonal Color Grid</title>
+  <style>
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    button {
+      padding: 15px;
+      background-color: blue;
+      color: white;
+      border: none;
+      border-radius: 10%;
+      cursor: pointer;
+    }
+
+    .container {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      grid-template-columns: repeat(5, 100px);
+      padding: 10px;
+    }
+
+    .box {
+      height: 100px;
+      width: 100px;
+      border: 2px solid black;
+      background-color: white; /* Initial background color */
+    }
+  </style>
 </head>
+
 <body>
-    
+  <h2>Diagonal Color Traversal 🌈</h2>
+  <div class="btn">
+    <button id="resetBtn">Reset</button>
+  </div>
+  <div class="container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gridSize = 5; // Change to 4 for 4x4
+      const container = document.querySelector('.container');
+      let count = 1;
+
+      // Create the grid
+      for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+          const cell = document.createElement('div');
+          cell.classList.add('box', `row${i}`, `col${j}`);
+          container.appendChild(cell);
+
+          cell.addEventListener('click', () => {
+            changeGrid(i, j, gridSize);
+          });
+        }
+      }
+
+      // Function to change the grid
+      function changeGrid(i, j, size) {
+        const directions = [
+          [-1, -1], // ↖
+          [-1, 1],  // ↗
+          [1, -1],  // ↙
+          [1, 1]    // ↘
+        ];
+
+        document.querySelector(`.row${i}.col${j}`).style.backgroundColor = 'yellow';
+
+        directions.forEach(([dx, dy]) => {
+          let x = i, y = j;
+
+          const interval = setInterval(() => {
+            x += dx;
+            y += dy;
+
+            if (x >= 0 && x < size && y >= 0 && y < size) {
+              const target = document.querySelector(`.row${x}.col${y}`);
+              if (target) target.style.backgroundColor = 'red';
+            } else {
+              clearInterval(interval);
+            }
+          });
+        });
+      }
+
+      // Reset functionality
+      document.getElementById('resetBtn').addEventListener('click', () => {
+        const allCells = document.querySelectorAll('.box');
+        allCells.forEach(cell => {
+          cell.style.backgroundColor = 'white'; // Reset to initial color
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>
