@@ -1,0 +1,32 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(30px, 1fr));
+  background-color: aqua;
+  border: 1px solid red;
+  border-radius: 8px;
+  padding: 5%; /* instead of 20% */
+  gap: 10px;
+  box-sizing: border-box; /* prevents padding from exceeding width */
+}
+
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.box {
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+span{
+    padding: 12px;
+    cursor: pointer;
+}
